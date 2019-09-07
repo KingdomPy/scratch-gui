@@ -46,9 +46,10 @@ import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
-import newBlockImage from './newblocks/newblocks.png';
-import newBlockButtonImage from './newblocks/newblocks-small.png';
-
+import kingdomNetIconURL from './kingdomNet/kingdomNet.png';
+import kingdomNetInsetIconURL from './kingdomNet/kingdomNet-small.svg';
+import kingdomNetConnectionIconURL from './kingdomNet/kingdomNet-illustration.svg';
+import kingdomNetConnectionSmallIconURL from './kingdomNet/kingdomNet-small.svg';
 
 export default [
     {
@@ -321,26 +322,35 @@ export default [
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
-    }
-,
+    },
     {
-        name: 'NewBlocks',
-        extensionId: 'newblocks',
-        collaborator: 'Me',
-        iconURL: newBlockImage,
-        insetIconURL: newBlockButtonImage,
+        name: 'Kingdom Net',
+        extensionId: 'kingdomNet',
+        collaborator: 'KingdomPy',
+        iconURL: kingdomNetIconURL,
+        insetIconURL: kingdomNetInsetIconURL,
         description: (
             <FormattedMessage
-                defaultMessage="New blocks."
-                description="my block"
-                id="gui.extension.newblocks.description"
+                defaultMessage="Connect to the Kingdom Net Client"
+                description="Description for the Kingdom Net extension"
+                id="gui.extension.kingdomNet.description"
             />
         ),
         featured: true,
         disabled: false,
+        bluetoothRequired: true,
         internetConnectionRequired: true,
-        bluetoothRequired: false,
-        helpLink: 'https://scratch.mit.edu/wedo'
-
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: kingdomNetConnectionIconURL,
+        connectionSmallIconURL: kingdomNetConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting to Kingdom Net Client"
+                description="Message to help people connect to the Kingdom Net Client."
+                id="gui.extension.kingdomNet.connectingMessage"
+            />
+        ),
+        helpLink: 'https://scratch.mit.edu/KingdomNet'
     }
 ];
